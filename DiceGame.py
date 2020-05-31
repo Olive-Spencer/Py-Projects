@@ -203,6 +203,10 @@ def scoring(scores, held_dice):
         print("invalid selection")
         return False
     
+    bonus_check = scores.get("ones") + scores.get("twos") + scores.get("threes") + scores.get("fours") + scores.get("fives") + scores.get("sixes")
+    print("bonus check", bonus_check)
+    if bonus_check >= 63:
+        scores.update({"upper_bonus" : 35}) 
             
     for x, y in scores.items():
     
